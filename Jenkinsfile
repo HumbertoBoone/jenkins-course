@@ -12,7 +12,7 @@ node {
      }
    }
    stage('docker build/push') {
-     docker.withRegistry('https://index.docker.io/v2/', '8b182da1-7838-4cd7-ac34-f9ff2c0b2075') {
+     docker.withRegistry('https://index.docker.io/v2/', 'dockerhub') {
        def app = docker.build("marvelino12/docker-node-demo-ba:${commit_id}", '.').push()
      }
    }
